@@ -16,11 +16,11 @@ const RedirectHandler = () => {
       const code = urlParams.get('code');//geting auth code from browsers search bar
 
 
-      if (code) {
+      if (code) {//if got valid code from browser than api will req access token
 
         const clientId = '1701407990273199';
-        const clientSecret = 'e31a4bf45e873070327e7e0f1bba9567'
-        const redirectUri = 'https://localhost:5173/redirect'
+        const clientSecret = 'e31a4bf45e873070327e7e0f1bba9567';
+        const redirectUri = 'https://localhost:5173/redirect';
 
         //setting up parameters for access token reqx`
         const params = new URLSearchParams();
@@ -33,7 +33,7 @@ const RedirectHandler = () => {
         try {
           //exchanging authcode with access token
           const response = await axios.post('https://api.instagram.com/oauth/access_token', params)
-          
+
           const accessToken = response.data.access_token;
 
           dispatch(setToken(accessToken));//storing access token in redux store
