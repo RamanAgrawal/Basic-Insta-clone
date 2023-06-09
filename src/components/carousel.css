@@ -1,0 +1,42 @@
+.carousel{
+    overflow:hidden; 
+    position: relative;
+    width: 300px;
+    
+    margin-inline: auto;
+    /* border: 2px solid black; */
+}
+.inner{
+    display:flex;
+    margin-inline: auto;
+    
+
+}
+.controls{
+    position: absolute;
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    margin-inline: auto;
+    justify-content:space-between;
+
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    z-index: 1000;
+}
+.controls button{
+    background-color: transparent;
+    padding: .25rem;
+    color: gray;
+    height: 3rem;
+    width:3rem;
+    border-radius: 50%; 
+    border:none;
+
+}
+.controls button:hover{
+    color: red;
+}

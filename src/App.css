@@ -1,0 +1,83 @@
+.btn-container{
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.btn-container button{
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+.btn-container button:hover{
+  box-shadow: 0px 1px 15px 3px gray;
+}
+
+.video-cover{
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.show-more{
+  color: white;
+  position: absolute;
+  top: 65%;
+  padding: 2rem;
+  width: 100%;
+
+}
+.details{
+  padding: 1rem;
+  margin-top: -2rem;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Carousel Styles */
+
+.carousel{
+  overflow:hidden; 
+  position: relative;
+  width: 300px;
+  margin-inline: auto;
+  
+}
+.inner{
+  display:flex;
+  margin-inline: auto;
+}
+.controls{
+  position: absolute;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  margin-inline: auto;
+  justify-content:space-between;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  z-index: 1000;
+}
+.controls button{
+  background-color: transparent;
+  padding: .25rem;
+  color: gray;
+  height: 3rem;
+  width:3rem;
+  border-radius: 50%; 
+  border:none;
+
+}
+.controls button:hover{
+  color: rgb(145, 140, 140);
+}
+.error{
+  text-align: center;
+  color: red;
+}
+@media screen (ma){
+  
+}
