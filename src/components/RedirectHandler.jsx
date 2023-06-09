@@ -11,6 +11,7 @@ const RedirectHandler = () => {
 
   useEffect(() => {
     const getCode = async () => {
+
       //access url from searchbar
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get('code');//geting auth code from browsers search bar
@@ -22,7 +23,7 @@ const RedirectHandler = () => {
         const clientSecret = 'e31a4bf45e873070327e7e0f1bba9567';
         const redirectUri = 'https://localhost:5173/redirect';
 
-        //setting up parameters for access token reqx`
+        //setting up parameters for access token req`
         const params = new URLSearchParams();
         params.append('client_id', clientId);
         params.append('client_secret', clientSecret);
@@ -31,7 +32,9 @@ const RedirectHandler = () => {
         params.append('code', code);
 
         try {
+          
           //exchanging authcode with access token
+
           const response = await axios.post('https://api.instagram.com/oauth/access_token', params)
 
           const accessToken = response.data.access_token;
@@ -50,7 +53,7 @@ const RedirectHandler = () => {
 
   return (
     <>
-   {error&& <h2 className='error'z>{error}</h2>}
+   {error&& <h2 className='error'>{error}</h2>}
      <ShowData/>
     </>
   );
