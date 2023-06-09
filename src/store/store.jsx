@@ -1,10 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
-import AccessTokenSlice from './AccessTokenSlice'
+
+import InstaSlice from './InstaSlice'
 
 
 const store=configureStore({
     reducer:{
-        accessToken:AccessTokenSlice
+        insta:InstaSlice
     }
 })
 export default store

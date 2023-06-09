@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { tokenActions } from '../store/AccessTokenSlice';
+import { tokenActions } from '../store/InstaSlice';
 import Carousel from './Carousel';
 
 
 //function component for rendering media
 const ShowMedia = ({ item }) => {
-    const [details, setDetails] = useState(false)
+    const [details, setDetails] = useState(false)//for toggle details
     const [mute, setMute] = useState(true);
     return (
         <div className='video-cover'>
@@ -24,17 +24,15 @@ const ShowMedia = ({ item }) => {
 
             }
             <div onClick={() => setDetails(prev => !prev)} className='show-more'>
-                <h2 style={{
-                    color: 'wheat',
-                }}
-                >{item.username}
+                <h2 style={{ color: 'wheat' }}>
+                    {item.username}
                 </h2>
-                {details ?
+                {details ? 
                     <div className='details'>
                         {item.caption}
                         <div>posted on-{new Date(item.timestamp).toDateString()}</div>
-                    </div> : <div>show more</div>
-
+                    </div> :
+                    <div>show more</div>
                 }
             </div>
 
@@ -45,16 +43,21 @@ const ShowMedia = ({ item }) => {
 
 //Main function for geeting data from api
 const ShowData = () => {
-    const token = useSelector(state => state.accessToken.token)
-    const data = useSelector(state => state.accessToken.data)
-    const [loading, setLoading] = useState('')
+    const token = useSelector(state => state.insta.token)
+    const data = useSelector(state => state.insta.data)
+
     const dispatch = useDispatch();
     const { setData } = tokenActions;
+   
+    const [loading, setLoading] = useState('')
+
     useEffect(() => {
         const getData = async () => {
+            setLoading('setting up apis.....')
             if (token) {
                 try {
-                    setLoading('Loading');
+                    setLoading('Loading...');
+                    //fetching media from instagram api
                     const res = await axios(`https://graph.instagram.com/me/media?
                     fields=id,caption,media_type,media_url,thumbnail_url,timestamp,username&access_token=${token}`)
                     setLoading('');
@@ -62,6 +65,7 @@ const ShowData = () => {
                 } catch (error) {
                     setLoading('something went wrong');
                 }
+                setLoading('')
             }
         }
         getData();
@@ -71,11 +75,14 @@ const ShowData = () => {
 
     return (
         <div style={{ width: "400px", marginInline: 'auto' }}>
-            {loading && <div style={{position:'absolute',left:'50%',top:'40%'}}> <h2>{loading}</h2></div>}
+            {loading && <div className='loader'>
+                <h2>{loading}</h2>
+            </div>}
             <Carousel>
 
                 {
                     data.map(item => (
+                        //Only videos will be disply
                         item.media_type === 'VIDEO' && <ShowMedia key={item.caption} item={item} />
                     ))
                 }

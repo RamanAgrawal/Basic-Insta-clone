@@ -6,8 +6,8 @@ token:'',
 data:[]
 }
 
-const AccessTokenSlice = createSlice({
-  name: 'token',
+const InstaSlice = createSlice({
+  name: 'insta',
   initialState,
   reducers: {
     setToken:(state,action)=>{
@@ -19,6 +19,6 @@ const AccessTokenSlice = createSlice({
   }
 });
 
-export const tokenActions = AccessTokenSlice.actions;
+export const tokenActions = InstaSlice.actions;
 
-export default AccessTokenSlice.reducer
+export default InstaSlice.reducer

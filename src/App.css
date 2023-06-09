@@ -1,3 +1,9 @@
+
+.logo{
+position: fixed;
+text-align: center;
+color: white;
+}
 .btn-container{
 height: 100vh;
 display: flex;
@@ -34,6 +40,12 @@ align-items: center;
   background-color: rgba(0,0,0,0.5);
 }
 
+.loader{
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  color: white;
+}
 /* Carousel Styles */
 
 .carousel{
@@ -78,6 +90,9 @@ align-items: center;
   text-align: center;
   color: red;
 }
-@media screen (ma){
-  
-}
+
+@media screen and (max-width: 600px){
+  .logo{
+    display: none;
+  }
+} 

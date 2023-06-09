@@ -15,7 +15,6 @@ const InstagramLoginButton = () => {
 
   return (
     <div className='btn-container'>
-
       <button onClick={handleLogin}>SYNC INSTAGRAM</button>
     </div>
   );
@@ -25,7 +24,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-       <h1 style={{textAlign:'center',color:'white',position:'fixed'}}>InstaClone</h1>
+       <h1 className='logo'>InstaClone</h1>
       <Routes>
         <Route path='/' element={<InstagramLoginButton />} />
         <Route path='/redirect' element={<RedirectHandler />} />
