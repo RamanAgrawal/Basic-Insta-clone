@@ -2,7 +2,12 @@
 .logo{
 position: fixed;
 text-align: center;
-color: white;
+background-color: blanchedalmond;
+color: rgb(9, 9, 9);
+width: 100%;
+top: 0%;
+left:0;
+height: 4rem;
 }
 .btn-container{
 height: 100vh;
@@ -17,27 +22,38 @@ align-items: center;
 .btn-container button:hover{
   box-shadow: 0px 1px 15px 3px gray;
 }
-
+.media-container{
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+  padding-inline: 8rem;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
 .video-cover{
   height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 0;
+  margin-bottom: -4rem;
 }
 .show-more{
   color: white;
-  position: absolute;
-  top: 65%;
-  padding: 2rem;
-  width: 100%;
-
+  position: relative;
+  margin-top: -4rem;
+  overflow: hidden;
+  margin-right: 4rem;
+  border-radius: 3px  ;
+  /* margin-inline: auto; */
+  
 }
 .details{
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  height: 4rem;
   padding: 1rem;
-  margin-top: -2rem;
-  background-color: rgba(0,0,0,0.5);
+  max-width: 216px;
+  margin-top: -4.5rem;
+  background-color: white;
+  color: black;
 }
 
 .loader{
@@ -48,16 +64,21 @@ align-items: center;
 }
 /* Carousel Styles */
 
-.carousel{
+.carousel-main{
   overflow:hidden; 
   position: relative;
-  width: 300px;
+  width: 1000px;
   margin-inline: auto;
   
 }
 .inner{
   display:flex;
+  /* flex-wrap: wrap; */
+margin-top: 4rem;
+  gap: 6rem;
+  /* width: 1000px; */
   margin-inline: auto;
+  transition: 0.5s ease-in;
 }
 .controls{
   position: absolute;
@@ -71,6 +92,7 @@ align-items: center;
   bottom: 0;
   left: 0;
   width: 300px;
+  width: 100%;
   z-index: 1000;
 }
 .controls button{
@@ -94,5 +116,8 @@ align-items: center;
 @media screen and (max-width: 600px){
   .logo{
     display: none;
+  }
+  .media-container{
+    padding: 0;
   }
 } 
