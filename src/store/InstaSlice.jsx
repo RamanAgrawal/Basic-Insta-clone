@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-// token:'IGQVJVUWJrRXpiQ0xHeUc2UHVoYURPNkM4UDQza3RLM2poRmRiakJjc3pUMDltdkxfVEtmWTQwQzVOc0VmS1V0X0RnNUZAfLTlaZA3QtZAy1WdUdYUUZAiSWhIWHFxYnBlUm5mSDJ0bzE1TmxTWGtCUWh4TgZDZD',
 token:'',
 data:[]
 }
